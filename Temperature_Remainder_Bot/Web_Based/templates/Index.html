@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Monitoring</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      h1 {
+        color: #333333;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      label {
+        display: inline-block;
+        width: 300px; /* Adjust the width as needed */
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-align: left; /* Align the text to the left */
+        color: #555555;
+      }
+
+      input {
+        width: calc(50% - 13px);
+        padding: 8px;
+        margin: 0 auto 15px auto;
+        box-sizing: border-box;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        font-size: 16px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+      }
+
+      input[type="number"],
+      input[type="text"] {
+        margin-right: 20px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Temperature Monitoring System</h1>
+      <form action="/" method="post">
+        <label for="num_cities">How many cities do you want to track?</label>
+        <input
+          type="number"
+          id="num_cities"
+          name="num_cities"
+          required
+          placeholder="Number of Cities"
+        /><br /><br />
+
+        <div id="city_input">
+          <!-- City input fields will be generated dynamically using JavaScript -->
+        </div>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("num_cities")
+        .addEventListener("change", function () {
+          const numCities = parseInt(this.value);
+          const cityInputContainer = document.getElementById("city_input");
+
+          // Clear existing city inputs
+          cityInputContainer.innerHTML = "";
+
+          // Generate input fields for each city
+          for (let i = 1; i <= numCities; i++) {
+            const cityNameLabel = document.createElement("label");
+            cityNameLabel.innerText = `City Name ${i}`;
+            const cityNameInput = document.createElement("input");
+            cityNameInput.type = "text";
+            cityNameInput.name = `city_name_${i}`;
+            cityNameInput.required = true;
+            cityNameInput.placeholder = `City ${i}`;
+
+            const minTempLabel = document.createElement("label");
+            minTempLabel.innerText = `Desired Min Temp ${i} (°C)`;
+            const minTempInput = document.createElement("input");
+            minTempInput.type = "number";
+            minTempInput.name = `min_temp_${i}`;
+            minTempInput.required = true;
+            minTempInput.placeholder = "Min Temperature";
+
+            const maxTempLabel = document.createElement("label");
+            maxTempLabel.innerText = `Desired Max Temp ${i} (°C)`;
+            const maxTempInput = document.createElement("input");
+            maxTempInput.type = "number";
+            maxTempInput.name = `max_temp_${i}`;
+            maxTempInput.required = true;
+            maxTempInput.placeholder = "Max Temperature";
+
+            cityInputContainer.appendChild(cityNameLabel);
+            cityInputContainer.appendChild(cityNameInput);
+            cityInputContainer.appendChild(minTempLabel);
+            cityInputContainer.appendChild(minTempInput);
+            cityInputContainer.appendChild(maxTempLabel);
+            cityInputContainer.appendChild(maxTempInput);
+            cityInputContainer.appendChild(document.createElement("br"));
+            cityInputContainer.appendChild(document.createElement("br"));
+          }
+        });
+    </script>
+  </body>
+</html>
