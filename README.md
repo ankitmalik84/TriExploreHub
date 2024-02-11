@@ -56,6 +56,11 @@ python app.py
 ```
 Open the generated link in a web browser.
 
+### After Running Bot 1:
+![Screenshot 1](s1.png)
+![Screenshot 2](s2.png)
+![Screenshot 3](s3.png)
+
 ## Running Bot 2: Holiday Planning 🏖️🎉
 1. Initiate the magic:
 ```bash
