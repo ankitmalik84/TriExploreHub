@@ -60,6 +60,7 @@ Open the generated link in a web browser.
 ![Screenshot 1](s1.png)
 ![Screenshot 2](s2.png)
 ![Screenshot 3](s3.png)
+![Screenshot 4](Screenshot%202024-02-11%20065357.png)
 
 ## Running Bot 2: Holiday Planning 🏖️🎉
 1. Initiate the magic:
