@@ -1,3 +1,5 @@
+# <u>Fetch-A-THON'24</u>
+
 # TriExploreHub 🌍✈️
 
 ## Step 1: Prerequisites 🛠️
