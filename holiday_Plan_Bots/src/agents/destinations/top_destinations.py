@@ -6,8 +6,8 @@ from twilio.rest import Client
 
 
 # Initialize Twilio client with your credentials
-account_sid = 'AC5f05e6270f412821cda29fc4b764d9a0'
-auth_token = 'a79cbfc27076ac6109d18ef57d0ffe61'
+account_sid = 'AC5f05e6270fxxxxxxxxxxxa0'
+auth_token = 'a79cbxxxxxxxxxxxxxxxxxxxx7d0ffe61'
 client = Client(account_sid, auth_token)
 
 def send_whatsapp_notification(phone_number, message):
