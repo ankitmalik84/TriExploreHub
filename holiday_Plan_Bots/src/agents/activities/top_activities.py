@@ -9,7 +9,7 @@ from uagents.setup import fund_agent_if_low
 import os
 
 
-os.environ["SERPAPI_API_KEY"] = "1c57a8c55f5c421b05944332b85c62471e015d753043d9206a90fc9c2a9ae1a7"
+os.environ["SERPAPI_API_KEY"] = "1c8c55fxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa7"
 
 
 TOP_ACTIVITIES_SEED = os.getenv("TOP_ACTIVITIES_SEED", "top_activities really secret phrase :)")
@@ -35,7 +35,7 @@ prompt = PromptTemplate(
 )
 
 
-llm = ChatOpenAI(temperature=0.1, openai_api_key="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")
+llm = ChatOpenAI(temperature=0.1, openai_api_key="sk-GPZceVroWQRxxxxxxxxxxxxxxxxxxxxxxxxRcPnL")
 tools = load_tools(["serpapi"], llm=llm)
 langchain_agent = initialize_agent(tools, llm, agent="chat-zero-shot-react-description", verbose=True)
 
